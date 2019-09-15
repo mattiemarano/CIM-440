@@ -2,18 +2,38 @@ var eyeW =20;
 var eyeH =25;
 var leftfootX =110;
 var leftfootY =380;
-var pupilY =140; 
+var pupilY =140;
+var bodyColor = "blue";
 
 function setup() {
   // put setup code here
   createCanvas(500,500);
   background (0,0,0);
+  pointX = width/2;
+  pointY = height/2;
 }
 
 function draw() {
   // put drawing code here
+
+  if(mouseX < width/2){
+    console.log("left hand side");
+    background("black");// flood the background: redraws the background every loop for a more fluid design
+    //delete background and it would then make the train (not fluid view)
+  }
+
+  if(mouseX > width/2){
+    console.log("right hand side");
+    background("white");
+
+  }
+
+  pointX = mouseX; //mouseX gives the position of the cursor
+  pointY = mouseY; //mouseY gives the position of the cursor
+
+
 //body
-  fill("Blue");
+  fill(bodyColor);
   stroke("Blue");
   strokeWeight(3);
   ellipse(150,150,100,125);//head
@@ -55,15 +75,27 @@ line(190,380,190,400); //left talon
 line(190,380,200,400); //middle talon
 
 //right wing
-fill("Blue");
+fill(bodyColor);
 strokeWeight(1);
 stroke("DarkBlue");
 ellipse(200,260,40,110);
+
 //left wing
-fill("Blue");
+fill(bodyColor);
 strokeWeight(1);
 stroke("DarkBlue");
 ellipse(100,260,40,110);
 
+} //end draw
 
+
+function keyPressed (){
+
+  if (key == "m"){
+    bodyColor = "blue";
+}
+
+  if (key == "n"){
+    bodyColor = "purple";
+  }
 }
