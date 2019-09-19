@@ -28,7 +28,7 @@ function setup() {
       faceColor = "orange";
 
   });
-}
+} //end of setup
 
 function draw() {
   // put drawing code here
@@ -46,7 +46,12 @@ if(mouseX > width/2){
   console.log("right hand side");
   background("DeepPink");
 
+if (mouseX == width/2){
+  console.log("middle");
+  background("yellow");
 }
+
+} // end of draw
 
 
 pointX = mouseX; //mouseX gives the position of the cursor
@@ -94,7 +99,4 @@ function keyPressed (){
   if(keyCode == 82){
     faceColor = "red";
   }
-
-
-
-}
+} // end of mouseReleased 
