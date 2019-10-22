@@ -42,9 +42,7 @@ function setup() {
   //var i = 0 is the start point
   //i<100 is the conditional; how many times do we want the for loop to run
   // i++ is the iterator, which is the same as saying i=i+1
-  for(var i = 0; i<snowAmount; i++){
-    snowX[i] = random(0,width); //random number is from 0-(width-1) or 0 to 399
-    snowY[i] = random(0,-500); //the range of where the snow will start is from the stop of the canvas to above the canvas - and then it will fall down (becasuse of snowX)
+   //the range of where the snow will start is from the stop of the canvas to above the canvas - and then it will fall down (becasuse of snowX)
   }
 
 
@@ -63,7 +61,6 @@ function setup() {
   console.log("leafY "+ leafY)
 
 
-}
 
 function draw() {
   // put drawing code here
@@ -75,18 +72,14 @@ function draw() {
     for(var f = 0; f<leafAmount; f++){
       if(leafY[f]<height-20){
         leafY[f]++; //makes the leaves move
-        leafX[f] = leafX[f] + sin(radians(frameCount)); //makes the leaves sway 
+        leafX[f] = leafX[f] + sin(radians(frameCount)); //makes the leaves sway
           // framecount is how many frames your sketch has produced; typically 60 frames per second - will convert the frames to degrees
-
-
 
         //console.log("leafY " + f + " " +leafY[f]);
       }
 
       image(leafImage, leafX[f], leafY[f], 20, 20);
       //console.log("leafY " + leafY);
-
-
     }
   }else if(seasonType =="winter"){
     console.log("winter");
