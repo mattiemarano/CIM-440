@@ -47,6 +47,7 @@ function mousePressed() {
       soundFile.play();
       cowVid.show();
       cowVid.play();
+      cowVid.style("display", "inline-block"); //place next to an html element
    }
 } //end of mousePressed
 
